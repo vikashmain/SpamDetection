@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Detector</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #87ceeb, #4682b4); /* Light blue gradient */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        form:hover {
+            transform: scale(1.05);
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border: 2px solid #87ceeb; /* Lighter blue for focus */
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4682b4; /* Darker blue */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4169e1; /* Slightly lighter blue on hover */
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ffeb3b;
+        }
+
+        h3 {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        strong {
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Spam Detector</h1>
+    <form action="/spam1" method="post">
+        <label for="username">Email:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Count Spam Emails">
+    </form>
+    {% if message %}
+        <h2>{{ message }}</h2>
+        <a href="/list">List of spams</a>
+    {% endif %}
+   
+      
+    </h2>
+</body>
+</html>

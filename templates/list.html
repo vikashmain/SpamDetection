@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #ff6347;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e7e7e7;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 1.1em;
+            color: #555;
+            transition: background 0.3s ease;
+        }
+
+        li:hover {
+            background: #d1d1d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spam List</h1>
+        <ul>
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
